@@ -94,24 +94,23 @@ from langchain.chains import LLMChain
 from langchain.chains.prompt_selector import ConditionalPromptSelector
 from langchain.prompts import PromptTemplate
 
+
 DEFAULT_LLAMA_SEARCH_PROMPT = PromptTemplate(
     input_variables=["question"],
-    template="""<<SYS>> 
-    You are a helpful assistant eager to assist with providing better Google search results.
-    <</SYS>> 
-    
-    [INST] Provide an answer to the following question in 150 words. Ensure that the answer is informative, \
-            relevant, and concise:
-            {question} 
-    [/INST]""",
+    template="""<<SYS>>You are an assistant that generates improved Google search queries.<</SYS>>
+    [INST] Create THREE alternative Google search queries related to the user’s question.
+    Return them as a numbered list, and ensure each query ends with a question mark.
+    Question:{question}[/INST]"""
 )
+
 DEFAULT_SEARCH_PROMPT = PromptTemplate(
     input_variables=["question"],
-    template="""You are a helpful assistant eager to assist with providing better Google search results. \
-        Provide an answer to the following question in about 150 words. Ensure that the answer is informative, \
-        relevant, and concise: \
-        {question}""",
+    template="""You are an assistant that generates improved Google search queries.
+        Create THREE alternative search queries related to the user’s question.
+        Return them as a numbered list, and ensure each query ends with a question mark.
+        Question: {question}"""
 )
+
 QUESTION_PROMPT_SELECTOR = ConditionalPromptSelector(
     default_prompt=DEFAULT_SEARCH_PROMPT,
     conditionals=[(lambda llm: isinstance(llm, LlamaCpp), DEFAULT_LLAMA_SEARCH_PROMPT)],
