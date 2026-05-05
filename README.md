@@ -8,6 +8,12 @@ A Retrieval‑Augmented Generation (RAG) system that ingests documents, creates 
   - Vector DB: ChromaDB
   - Embedding: sentence-Transformers
 
+
+## Rag Results After Retrieval: 
+![aiagent](https://github.com/NowshadRuhan/Retrieval-Augmented-Generation-RAG-System/blob/main/rag-1.png?raw=true) 
+![aiagent](https://github.com/NowshadRuhan/Retrieval-Augmented-Generation-RAG-System/blob/main/rag-2.png?raw=true) 
+
+
 LangChain serves as the backbone of this setup, providing a flexible framework for building applications powered by large language models. It acts as the connective layer, making it easy to integrate LLMs with external tools, data sources, and workflows. Because the project evolves quickly, its APIs and documentation change often, so implementations may require occasional updates. Below is the most straightforward way to configure the system using the current stable approach.
 
 ## Step 1: Environment Setup
