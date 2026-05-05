@@ -1,7 +1,15 @@
 # Retrieval-Augmented-Generation-RAG-System
 A Retrieval‑Augmented Generation (RAG) system that ingests documents, creates embeddings, stores them in a vector database, and retrieves relevant context to generate accurate, grounded AI responses using LLMs for search, chat, and knowledge automation.
 
- 
+ flowchart TD
+    A[START] --> B[Step 1: Environment Setup]
+    B --> C[Step 2: File Processing & Database Import]
+    C --> D[Step 3: Initialize LLM]
+    D --> E[Step 4: Prompt Configuration]
+    E --> F[Step 5: Retrieval + LLM Query]
+    F --> G[Step 6: Run RAG Query]
+    G --> H[END]
+
 ## Requirement need:
   - LLM: Llama‑2 7B
   - LLM API: llama.cpp service
