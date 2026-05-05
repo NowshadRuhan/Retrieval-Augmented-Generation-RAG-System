@@ -1,32 +1,6 @@
 # Retrieval-Augmented-Generation-RAG-System
 A Retrieval‑Augmented Generation (RAG) system that ingests documents, creates embeddings, stores them in a vector database, and retrieves relevant context to generate accurate, grounded AI responses using LLMs for search, chat, and knowledge automation.
 
-flowchart TD
-
-%% COLOR PALETTE
-classDef start fill:#4CAF50,color:white,stroke:#2E7D32
-classDef step1 fill:#2196F3,color:white,stroke:#0D47A1
-classDef step2 fill:#FF9800,color:white,stroke:#E65100
-classDef step3 fill:#9C27B0,color:white,stroke:#4A148C
-classDef step4 fill:#00ACC1,color:white,stroke:#006064
-classDef step5 fill:#F44336,color:white,stroke:#B71C1C
-classDef step6 fill:#8BC34A,color:white,stroke:#33691E
-classDef end fill:#424242,color:white,stroke:#000000
-
-%% FLOWCHART
-A[START]:::start --> B[Step 1: Environment Setup\nInstall dependencies]:::step1
-
-B --> C[Step 2: File Processing & Database Import\nLoad PDF\nSplit text\nGenerate embeddings\nStore in ChromaDB]:::step2
-
-C --> D[Step 3: Initialize LLM (LlamaCpp)\nLoad local Llama model]:::step3
-
-D --> E[Step 4: Prompt Configuration\nSelect prompt\nCreate LLMChain]:::step4
-
-E --> F[Step 5: Retrieval + LLM Query\nCreate Retriever\nBuild RetrievalQA chain]:::step5
-
-F --> G[Step 6: Run RAG Query\nUser asks question\nRetriever fetches chunks\nLLM receives context\nLLM generates answer]:::step6
-
-G --> H[END]:::end
  
 ## Requirement need:
   - LLM: Llama‑2 7B
